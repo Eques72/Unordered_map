@@ -1,7 +1,7 @@
-# Unordered map
+# Unordered_map
 Implementation of associative container template based on hash function.
 
-Obviusly less efficient that template from standard library. Creating this project help me get smart pointers and dynamic memory managment right.
+Obviously less efficient than template from standard library. Creating this project help me get smart pointers and dynamic memory management right.
 
 ## Examples
 ~~~C++ 
