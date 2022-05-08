@@ -7,12 +7,16 @@ double Unordered_map<K, T>::FILL_LIMIT = 0.75;
 
 
 template<typename K, typename T>
-Unordered_map<K, T>::Unordered_map() : _size(8) 
-{	array = std::shared_ptr<Pair[]>(new Pair[_size]); }
+Unordered_map<K, T>::Unordered_map() : _size(8)
+{
+	array = std::shared_ptr<Pair[]>(new Pair[_size]);
+}
 
 template<typename K, typename T>
-Unordered_map<K, T>::Unordered_map(size_t s) :_size(s) 
-{ array = std::shared_ptr<Pair[]>(new Pair[_size]); }
+Unordered_map<K, T>::Unordered_map(size_t s) :_size(s)
+{
+	array = std::shared_ptr<Pair[]>(new Pair[_size]);
+}
 
 template<typename K, typename T>
 Unordered_map<K, T>::Unordered_map(size_t s, const std::function<T(const size_t i)>& f) : _size((size_t)(2 * s / FILL_LIMIT))
@@ -36,10 +40,10 @@ void Unordered_map<K, T>::resize()
 	_size = _size * 2;
 	if (_size < 0)
 		_size = INT_MAX;
-		std::shared_ptr<Pair[]> tmp(new Pair[_size]);
-		array = tmp;
+	std::shared_ptr<Pair[]> tmp(new Pair[_size]);
+	array = tmp;
 
-		_space_taken = 0;
+	_space_taken = 0;
 	for (size_t b{ 0 }; b < old_size; b++)
 		if (old[b].isActive())
 		{
@@ -58,7 +62,7 @@ T& Unordered_map<K, T>::operator[](K k)
 {
 	Hash H;
 	int index = H.hash(k, _size);
-	
+
 	if (array[index].first() == k && array[index].isActive())
 		return array[index].second();
 	else if (array[index].isActive())

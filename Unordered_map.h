@@ -39,7 +39,7 @@ private:
 		const_iterator(Pair* p, const size_t i);
 		~const_iterator();
 
-		auto & operator++();
+		auto& operator++();
 		auto operator++(int);
 
 		inline const T& operator*() const { return obj->second(); }
@@ -62,7 +62,7 @@ private:
 		~iterator();
 
 		auto& operator++();
-		
+
 		auto operator++(int);
 
 		inline T& operator*() { return obj->second(); }
@@ -90,7 +90,7 @@ public:
 	void insert(K k, const T& val);
 
 	const_iterator cbegin() const { return const_iterator(array.get()); }
-	const_iterator cend() const { return const_iterator(array.get(), _size ); }
+	const_iterator cend() const { return const_iterator(array.get(), _size); }
 
 	iterator begin() { return iterator(array.get()); }
 	iterator end() { return iterator(array.get(), _size); }

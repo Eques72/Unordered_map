@@ -26,7 +26,7 @@ int main()
 	m1.insert(14, 53.33);
 	for (int q{ 0 }; q < 5; q++)
 	{
-		m1.insert(q, 1+q * 13);
+		m1.insert(q, 1 + q * 13);
 	}
 	for (size_t q{ 0 }; q < 5; q++)
 	{
@@ -46,7 +46,7 @@ int main()
 	{
 		std::cout << w << std::endl;
 	}
-	
+
 	std::cout << "\n ////////// Mapa CHAR i STRING //////////////\n";
 	Unordered_map<char, std::string> m3(18);
 	for (size_t q{ 0 }; q < 20; q++)
@@ -64,21 +64,21 @@ int main()
 	Unordered_map<char*, int> mChar;
 	for (size_t q{ 0 }; q < 10; q++)
 	{
-		char t[] = { 'a'+q, q , 'a'+q, 'a'+q*2};
+		char t[] = { 'a' + q, q , 'a' + q, 'a' + q * 2 };
 		mChar.insert(t, 5);
 	}
 	for (auto w : mChar)
 	{
 		std::cout << w << std::endl;
 	}
-	
+
 	std::cout << "\n ////////// Mapa STRING i DOUBLE //////////////\n";
-	Unordered_map<std::string,double> mS;
+	Unordered_map<std::string, double> mS;
 	for (size_t q{ 0 }; q < 43; q++)
 	{
 		char a = 'a' + q;
 		std::string b = std::to_string('z' - q) + a;
-		mS.insert(b, q*3.22+4.44);
+		mS.insert(b, q * 3.22 + 4.44);
 	}
 	for (auto w : mS)
 	{
@@ -86,5 +86,5 @@ int main()
 	}
 
 	return 0;
-	
+
 }

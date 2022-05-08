@@ -9,18 +9,20 @@ Unordered_map<K, T>::iterator::iterator(Pair* p, const size_t i) : obj(p), bucke
 
 template<typename K, typename T>
 Unordered_map<K, T>::iterator::~iterator()
-{ bucket = nullptr; obj = nullptr; }
+{
+	bucket = nullptr; obj = nullptr;
+}
 
 template<typename K, typename T>
 auto& Unordered_map<K, T>::iterator::operator++()
 {
-		if (obj->next == nullptr)
-			if (obj == bucket++)
-				++obj;
-			else
-				obj = ++bucket;
+	if (obj->next == nullptr)
+		if (obj == bucket++)
+			++obj;
 		else
-			obj = obj->next.get();
+			obj = ++bucket;
+	else
+		obj = obj->next.get();
 
 	return *this;
 }
@@ -29,13 +31,13 @@ template<typename K, typename T>
 auto Unordered_map<K, T>::iterator::operator++(int)
 {
 	auto old = this->obj;
-		if (obj->next == nullptr)
-			if (obj == bucket)
-				this.obj++;
-			else
-				obj = ++bucket;
+	if (obj->next == nullptr)
+		if (obj == bucket)
+			this.obj++;
 		else
-			obj = obj->next;
+			obj = ++bucket;
+	else
+		obj = obj->next;
 
 	return iterator(old);
 }

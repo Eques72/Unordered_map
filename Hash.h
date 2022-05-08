@@ -9,7 +9,7 @@ public:
 	template<typename K>
 	size_t hash(K& k, size_t s)
 	{
-		return k%s;
+		return k % s;
 	}
 
 	size_t hash(std::string& k, size_t s) // DJB Hash Function
