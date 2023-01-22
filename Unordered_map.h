@@ -5,11 +5,17 @@
 #include <functional>
 #include "Hash.h"
 
+/**
+* An implementation of unordered map container
+* Created as a template, so any data type can be stored, with any key type*
+* Is iterable, random access close to O(1) to O(n) [in pessimistic case]
+*/
 template<typename K, typename T>
 class Unordered_map
 {
 private:
 
+	//Representaion of the one node, a pair of a unique key and a data element
 	class Pair
 	{
 		K _key;
@@ -100,12 +106,9 @@ public:
 	inline size_t get_number_of_elements() const { return _space_taken; }
 
 	T& operator[](K k);
-
 };
 
-
-
-
+//Lines for linker to find proper defininition files
 #include "Unordered_map.cpp"
 #include "Iterator.cpp"
 #include "Const_iterator.cpp"

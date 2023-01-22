@@ -3,6 +3,7 @@
 
 #include <string>
 
+//Simple implementation of hash function. It wasn't main point of the program, so it is pretty basic
 class Hash
 {
 public:
